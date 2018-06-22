@@ -1,0 +1,13 @@
+.content {
+    margin-top: 80px
+}
+.stat_bar {
+    width: 100%;
+    background: white;
+    margin: 0;
+    border: 1px solid blue;
+    color: black
+}
+p {
+    margin: auto;
+}
