@@ -9,7 +9,7 @@ import Start from './components/Start'
 import LoginPage from './components/LoginPage'
 
 
-export const serverAddress = 'http://localhost:3001';
+export const serverAddress = 'https://magic-cashbox-server.herokuapp.com';
 /*
 import { render } from 'react-dom'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
@@ -35,7 +35,7 @@ class App extends React.Component {
     }
 
 
-    render(){console.log('render')
+    render(){
         return(
 
             this.props.authed ? <Start /> : <LoginPage/>
