@@ -34,11 +34,9 @@ class History extends Component {
                                     padding: '5px'
 
                                 }}>
-                                    <div style={{float: 'left'}}>
                                         <p><b>Дата:</b>: {item.date}</p>
                                         <p><b>Время в работе:</b> {this.toHHMMSS(item.time)}</p>
                                         <p><b>Заработано:</b> {item.earned}</p>
-                                    </div>
                                 </div>
                             )
                         })
