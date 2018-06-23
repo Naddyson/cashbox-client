@@ -26,7 +26,8 @@ class Work extends Component {
         this.props.work_buttons(true);
     };
     closeDialog = () => {
-        this.setState({ dialog: false })
+        this.setState({ dialog: false });
+        this.props.work_buttons(false);
     }
 
     render() {

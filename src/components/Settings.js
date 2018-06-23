@@ -16,7 +16,6 @@ class Settings extends Component {
 
                 <h3>Нашел баг? Свяжись со мной!</h3>
                 <h4>Евгений: +38(093)557-89-05 - Telegram, WhatsApp</h4>
-
             </div>
         );
     }
