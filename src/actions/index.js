@@ -10,6 +10,7 @@ export function timer_tick() {
     }
 }
 export function earn_cash(earned, sessionID){
+
     return dispatch => {
         axios.put(`${serverAddress}/add-cash/${sessionID}`, { cash: earned }).then( (response) => {
 
