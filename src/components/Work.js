@@ -13,18 +13,26 @@ class Work extends Component {
         return (
             <div className='container'>
                 <div className="buttons_container">
-                <Button onClick={() => this.props.earn_cash(100, sessionID)} variant="raised" color="secondary" className='earn_cash_button'>
-                    <h1>100 ₽</h1>
+                <Button onClick={() => {
+                    if (window.confirm('Earned ₽100. Are you sure?')) this.props.earn_cash(100, sessionID)
+                }} variant="raised" color="secondary" className='earn_cash_button'>
+                    <h1>₽100</h1>
                 </Button>
-                <Button onClick={() => this.props.earn_cash(200, sessionID)} variant="raised" color="secondary" className='earn_cash_button'>
-                    <h1>200 ₽</h1>
-                </Button>
-                <Button onClick={() => this.props.earn_cash(300, sessionID)} variant="raised" color="secondary" className='earn_cash_button'>
-                    <h1>300 ₽</h1>
-                </Button>
-                <Button onClick={() => this.props.earn_cash(400, sessionID)} variant="raised" color="secondary" className='earn_cash_button'>
-                    <h1>400 ₽</h1>
-                </Button>
+                    <Button onClick={() => {
+                        if (window.confirm('Earned ₽200. Are you sure?')) this.props.earn_cash(200, sessionID)
+                    }} variant="raised" color="secondary" className='earn_cash_button'>
+                        <h1>₽200</h1>
+                    </Button>
+                    <Button onClick={() => {
+                        if (window.confirm('Earned ₽300. Are you sure?')) this.props.earn_cash(300, sessionID)
+                    }} variant="raised" color="secondary" className='earn_cash_button'>
+                        <h1>₽300</h1>
+                    </Button>
+                    <Button onClick={() => {
+                        if (window.confirm('Earned ₽400. Are you sure?')) this.props.earn_cash(400, sessionID)
+                    }} variant="raised" color="secondary" className='earn_cash_button'>
+                        <h1>₽400</h1>
+                    </Button>
                 </div>
             </div>
         );
