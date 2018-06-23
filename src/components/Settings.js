@@ -36,7 +36,7 @@ class Settings extends Component {
                 }}>Закончить работу</Button>
 
                 <h3>Нашел баг? Свяжись со мной!</h3>
-                <h4>Евгений: +38(093)557-89-05 - Telegram, WhatsApp</h4>
+                <h4>Евгений: +380935578905 - Telegram, WhatsApp</h4>
             </div>
         );
     }

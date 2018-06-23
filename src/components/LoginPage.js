@@ -80,7 +80,7 @@ class LoginPage extends Component {
                         </Button>
                     </div>
                 </form>
-                <p>You don't have an account? Or any problems? Contact me! +38(093)557 89 05 - Telegram, WhatsApp</p>
+                <p>You don't have an account? Or any problems? Contact me! +380935578905 - Telegram, WhatsApp</p>
 
             </div>
         );
