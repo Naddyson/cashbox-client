@@ -34,7 +34,7 @@ class Work extends Component {
         var state = this.state;
         return (
             <div className='container'>
-                <h2 style={{ textAlign: 'center'}}>Да пребудет с тобою сила!</h2>
+                <h2 style={{ textAlign: 'center'}}>Да пребудет с тобой сила!</h2>
                 { state.dialog ? <AlertDialog open={state.dialog} func={state.func} text={state.text} close={this.closeDialog}/> : <div/> }
                 <Button onClick={() => {
                     this.clickHandle(100)

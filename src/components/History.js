@@ -26,8 +26,6 @@ class History extends Component {
                         : this.props.history.map( item => {
                             return (
                                 <div style={{
-                                    width: '100%',
-                                    height: '80px',
                                     border: '1px solid blue ',
                                     borderRadius: 10,
                                     marginBottom: 2,

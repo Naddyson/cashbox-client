@@ -53,11 +53,16 @@ export function login(username, password){
 
     return dispatch => {
         axios.post(`${serverAddress}/auth/`, {logusername: username, logpassword: password}).then( (response) => {
-            if (!response.data) alert('Wrong login or password!');
-            return dispatch({
-                type: 'LOGIN_SUCCESS',
-                payload: response.data
-            })
+            console.log(response);
+            if (response.data.status === 401) {
+                alert('Wrong login or password!');
+            } else {
+                return dispatch({
+                    type: 'LOGIN_SUCCESS',
+                    payload: response.data
+                })
+            }
+
 
         })
         .catch(error => {
