@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, TextField } from 'material-ui';
 import "./LoginPage.css";
 import {login} from "../actions";
 import {connect} from "react-redux";
@@ -17,9 +18,16 @@ class LoginPage extends Component {
         return this.state.username.length > 0 && this.state.password.length > 0;
     }
 
-    handleChange = event => {
+    changeUsername = (event) => {
+        console.log(event)
         this.setState({
-            [event.target.id]: event.target.value
+            username: event.target.value
+        });
+    }
+    changePassword = (event) => {
+        console.log(event)
+        this.setState({
+            password: event.target.value
         });
     }
 
@@ -30,36 +38,50 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div className="Login">
+            <div className='buttons_container'>
+
                 <h1>Julius & Company</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="username" bsSize="large">
-                        <ControlLabel>Username</ControlLabel>
-                        <FormControl
-                            autoFocus
-                            type="username"
+                    <div className='flex-container-column'>
+                        <div>
+                        <TextField
+                            id="Username"
+                            label="Username"
+                            style={{
+                                margin: 'auto',
+                                width: 200
+                            }}
                             value={this.state.username}
-                            onChange={this.handleChange}
+                            onChange={this.changeUsername}
+                            margin="normal"
                         />
-                    </FormGroup>
-                    <FormGroup controlId="password" bsSize="large">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
+                        </div>
+                        <div>
+                        <TextField
+                            id="Password"
+                            label="Password"
                             value={this.state.password}
-                            onChange={this.handleChange}
-                            type="password"
+                            onChange={this.changePassword}
+                            margin="normal"
+                            type='password'
                         />
-                    </FormGroup>
-                    <Button
-                        block
-                        bsSize="large"
-                        disabled={!this.validateForm()}
-                        type="submit"
-                    >
-                        Login
-                    </Button>
+                        </div>
+                        <Button
+                            variant="raised" color="primary"
+                            disabled={!this.validateForm()}
+                            type="submit"
+                            style={{
+                                margin: 'auto',
+                                width: 200,
+                                marginBottom: '15px'
+                            }}
+                        >
+                            Login
+                        </Button>
+                    </div>
                 </form>
                 <p>You don't have an account? Or any problems? Contact me! +38(093)557 89 05 - Telegram, WhatsApp</p>
+
             </div>
         );
     }

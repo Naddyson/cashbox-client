@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import { Router, IndexRoute, Route, Switch, Link, Redirect } from 'react-router-dom';
+import { Button } from 'material-ui'
 import "./LoginPage.css";
 import {createSession} from "../actions";
 import {connect} from "react-redux";
@@ -43,17 +42,20 @@ class Start extends Component {
                 return <AppProtected/>
             } else return (
                 <div className="Start">
-                    <h1>Здравствуй, {this.props.username}!</h1>
-                    <h2>Добро пожаловать в Julius & Company</h2>
-                    <h3>Лесенка крутится - бабки мутятся</h3>
-                    <h3>Это не шутки - айфоны и мишутки</h3>
-                    <h3>Непросто, но реально</h3>
+                    <div className='buttons_container'>
+                        <h1>Здравствуй, {this.props.username}!</h1>
+                        <h3>Добро пожаловать в Julius & Company</h3>
+                        <h3>Лесенка крутится - бабки мутятся</h3>
+                        <h3>Это не шутки - айфоны и мишутки</h3>
+                        <h3>Непросто, но реально!</h3>
 
-                    <Button
-                        onClick={this.handleStart }
-                    >
-                        Начать работу!
-                    </Button>
+                        <Button
+                            variant="raised" color="secondary"
+                            onClick={this.handleStart }
+                        >
+                            Начать работу!
+                        </Button>
+                    </div>
                 </div>
             )
 

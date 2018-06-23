@@ -17,8 +17,8 @@ class Results extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Поздравляю с концом рабочего дня, {this.props.username}!</h1>
+            <div className='buttons_container'>
+                <h1>{this.props.username}, поздравляю с концом рабочего дня!</h1>
                 <h2>Твои результаты:</h2>
                 <h3>Касса: {this.props.cash}</h3>
                 <h3>Время в работе: {this.toHHMMSS(this.props.seconds)}</h3>

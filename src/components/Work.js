@@ -4,7 +4,7 @@ import toHHMMSS from '../toHHMMSS'
 import { earn_cash, workButtons } from "../actions";
 import './Work.css'
 import {connect} from "react-redux";
-import { Tabs, Tab, Button } from 'material-ui';
+import { Button } from 'material-ui';
 import { confirmable } from 'react-confirm';
 import AlertDialog from "./AlertDialog";
 
@@ -34,8 +34,8 @@ class Work extends Component {
         var state = this.state;
         return (
             <div className='container'>
+                <h2 style={{ textAlign: 'center'}}>Да пребудет с тобою сила!</h2>
                 { state.dialog ? <AlertDialog open={state.dialog} func={state.func} text={state.text} close={this.closeDialog}/> : <div/> }
-                <div className="buttons_container">
                 <Button onClick={() => {
                     this.clickHandle(100)
                 }} variant="raised" fullWidth={true} color="secondary" disabled={this.props.workButtonsDisabled}
@@ -66,7 +66,7 @@ class Work extends Component {
                     }}>
                         <h1>₽400</h1>
                     </Button>
-                </div>
+
             </div>
         );
     }

@@ -92,7 +92,9 @@ class AppProtected extends Component {
                 </AppBar>
 
                 <div className='content'>
+                    <div className='buttons_container'>
                     {this.renderSwitch(menuValue)}
+                    </div>
                 </div>
             </div>
         );

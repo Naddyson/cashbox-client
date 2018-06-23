@@ -30,9 +30,9 @@ export default function indexReducer (state = initialState, action) {
             return {...state, workButtonsDisabled: action.bool}
         }
         case "EARN_CASH": {
-
+            let date = new Date().toString();
             return {...state, cash: state.cash + action.earned, workButtonsDisabled: false, history: [...state.history, {
-                time: state.seconds, earned: action.newHistory.cashChange, date: new Date()
+                time: state.seconds, earned: action.newHistory.cashChange, date: date
                 }]}
         }
         case "AUTH_STATUS": {

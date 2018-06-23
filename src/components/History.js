@@ -16,27 +16,36 @@ class History extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{ width: '100%'}}>
                 {
-                    this.props.history.map( item => {
-                    return (
-                        <div style={{
-                            width: '100%',
-                            height: '50px',
-                            border: '1px solid pink',
-                            borderRadius: 10,
-                            marginBottom: 2,
-                            
-                        }}>
-                            <div style={{float: 'left'}}>
-                                <p>{item.date}</p>
-                                <p>{this.toHHMMSS(item.time)}</p>
+                    this.props.history.length === 0
+                        ? <div>
+                            <h2>Ты пока еще ничего не заработал.</h2>
+                            <h3>Сосредоточься на работе и думай только о ней. Размер твоей зарплаты полностью зависит от тебя!</h3>
                             </div>
+                        : this.props.history.map( item => {
+                            return (
+                                <div style={{
+                                    width: '100%',
+                                    height: '50px',
+                                    border: '1px solid pink',
+                                    borderRadius: 10,
+                                    marginBottom: 2,
+                                    padding: '5px'
 
-                            <div style={{float: 'right'}}>{ item.earned }</div>
-                        </div>
-                    )
-                } )}
+                                }}>
+                                    <div style={{float: 'left'}}>
+                                        <p>Дата: {item.date}</p>
+                                        <p>Время в работе: {this.toHHMMSS(item.time)}</p>
+                                    </div>
+
+                                    <div style={{float: 'right'}}>{ item.earned }</div>
+                                </div>
+                            )
+                        })
+
+
+                }
             </div>
         );
     }
