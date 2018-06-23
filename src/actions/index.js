@@ -2,10 +2,22 @@
 import axios from 'axios'
 import { serverAddress } from '../App';
 
-export function timer_tick() {
+export function timer_tick(state) {
+    console.log(state)
+    localStorage.setItem('state', JSON.stringify(state));
+    console.log(localStorage.getItem('state'))
     return dispatch => {
         dispatch({
             type: "TIMER_TICK"
+        })
+    }
+}
+
+export function set_state(state){
+    return dispatch => {
+        dispatch({
+            type: "SET_STATE",
+            state: state
         })
     }
 }
@@ -26,6 +38,14 @@ export function earn_cash(earned, sessionID){
 
 
 
+    }
+}
+export function workButtons(bool){
+    return dispatch => {
+        return dispatch({
+            type: "WORK_BUTTONS",
+            bool: bool
+        })
     }
 }
 
@@ -81,6 +101,7 @@ export function finishSession(id){
 }
 
 export function logout(){
+    localStorage.clear();
     return dispatch => {
         axios.get(`${serverAddress}/auth/logout`).then( (res) => {
             if (!res) alert ('WTF?!');

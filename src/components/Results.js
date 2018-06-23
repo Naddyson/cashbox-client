@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {logout} from "../actions";
 import {connect} from "react-redux";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button } from "material-ui";
 
 class Results extends Component {
     toHHMMSS = (sec_num) => {
@@ -24,7 +24,7 @@ class Results extends Component {
                 <h3>Время в работе: {this.toHHMMSS(this.props.seconds)}</h3>
                 <h3>Твоя зарплата (20%): {this.props.cash*0.2}</h3>
                 <h3>Твой рейтинг (в разработке): ...</h3>
-                <Button onClick={()=> this.props.logout()}>Yes!</Button>
+                <Button variant="raised" color="secondary" onClick={()=> this.props.logout()}>Понял!</Button>
             </div>
         );
     }

@@ -10,21 +10,28 @@ const initialState = {
     seconds: 0,
     history: [],
     started: false,
-    finished: false
+    finished: false,
+    workButtonsDisabled: false
 };
 
 export default function indexReducer (state = initialState, action) {
-    console.log(action)
+
     switch(action.type){
+        case "SET_STATE": {
+            return action.state
+        }
         case "SET_DATA":{
             return {...state, history: action.payload}
         }
         case "TIMER_TICK": {
             return {...state, seconds: state.seconds + 1}
         }
+        case "WORK_BUTTONS": {
+            return {...state, workButtonsDisabled: action.bool}
+        }
         case "EARN_CASH": {
 
-            return {...state, cash: state.cash + action.earned, history: [...state.history, {
+            return {...state, cash: state.cash + action.earned, workButtonsDisabled: false, history: [...state.history, {
                 time: state.seconds, earned: action.newHistory.cashChange, date: action.newHistory.date
                 }]}
         }
@@ -53,5 +60,6 @@ export default function indexReducer (state = initialState, action) {
         }
         default: return state
     }
+
 
 }

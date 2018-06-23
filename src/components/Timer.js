@@ -12,7 +12,7 @@ class Timer extends Component {
         }
     }
     componentDidMount(){
-        this.timer = setInterval(this.props.timerTick, 1000);
+        this.timer = setInterval(() => { this.props.timerTick(this.props.state)}, 1000);
 
     }
     componentWillUnmount(){
@@ -47,13 +47,14 @@ Timer.propTypes = {};
 
 function mapStateToProps(state){
     return {
-        seconds: state.seconds
+        seconds: state.seconds,
+        state: state
     }
 }
 function mapDispatchToProps(dispatch){
     return {
-        timerTick: () => {
-            dispatch(timer_tick());
+        timerTick: (state) => {
+            dispatch(timer_tick(state));
         }
     }
 }

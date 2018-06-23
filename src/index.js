@@ -8,9 +8,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 
-import configureStore from './store/configureStore'
+import storeWithMiddleware from './store/configureStore'
 
-const store = configureStore();
+const store = storeWithMiddleware();
 
 store.subscribe(() => {
     console.log('Store has changed')

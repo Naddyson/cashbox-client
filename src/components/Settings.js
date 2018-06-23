@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {setSession} from "../actions";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button } from "material-ui";
 import {connect} from "react-redux";
 import {finishSession, logout} from '../actions'
 
@@ -11,8 +11,8 @@ class Settings extends Component {
         return (
             <div>
                 <h1>Как дела, {this.props.username}?</h1>
-                <p>Закончить работу</p>
-                <Button onClick={() => this.props.finishSession(this.props.sessionID)}>Finish</Button>
+                <h3>Если ты уже закрылся, то можешь: </h3>
+                <Button variant="raised" color="secondary" onClick={() => this.props.finishSession(this.props.sessionID)}>Закончить работу</Button>
 
                 <h3>Нашел баг? Свяжись со мной!</h3>
                 <h4>Евгений: +38(093)557-89-05 - Telegram, WhatsApp</h4>

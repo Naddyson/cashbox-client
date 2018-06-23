@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import toHHMMSS from '../toHHMMSS'
-import { earn_cash, timer_tick } from "../actions";
+import { earn_cash, workButtons } from "../actions";
 import './Work.css'
 import {connect} from "react-redux";
 import { Tabs, Tab, Button } from 'material-ui';
@@ -22,14 +22,14 @@ class Work extends Component {
             func: () => { this.props.earn_cash(earned, this.props.sessionID) },
             text: `₽${earned} Are you sure?`
         });
-        this.setState({ dialog: true })
+        this.setState({ dialog: true });
+        this.props.work_buttons(true);
     };
     closeDialog = () => {
         this.setState({ dialog: false })
     }
 
     render() {
-        const sessionID = this.props.sessionID;
         var state = this.state;
         return (
             <div className='container'>
@@ -37,7 +37,7 @@ class Work extends Component {
                 <div className="buttons_container">
                 <Button onClick={() => {
                     this.clickHandle(100)
-                }} variant="raised" fullWidth={true} color="secondary"
+                }} variant="raised" fullWidth={true} color="secondary" disabled={this.props.workButtonsDisabled}
                 style={{
                     marginBottom: '25px'
                 }}>
@@ -45,7 +45,7 @@ class Work extends Component {
                 </Button>
                     <Button onClick={() => {
                         this.clickHandle(200)
-                    }} variant="raised" color="secondary" fullWidth={true}
+                    }} variant="raised" color="secondary" fullWidth={true} disabled={this.props.workButtonsDisabled}
                     style={{
                         marginBottom: '25px'
                     }}>
@@ -53,14 +53,14 @@ class Work extends Component {
                     </Button>
                     <Button onClick={() => {
                         this.clickHandle(300)
-                    }} variant="raised" color="secondary" fullWidth={true} style={{
+                    }} variant="raised" color="secondary" fullWidth={true} disabled={this.props.workButtonsDisabled} style={{
                         marginBottom: '25px'
                     }}>
                         <h1>₽300</h1>
                     </Button>
                     <Button onClick={() => {
                         this.clickHandle(400)
-                    }} variant="raised" color="secondary" fullWidth={true} style={{
+                    }} variant="raised" color="secondary" fullWidth={true} disabled={this.props.workButtonsDisabled} style={{
                         marginBottom: '25px'
                     }}>
                         <h1>₽400</h1>
@@ -75,7 +75,8 @@ Work.propTypes = {};
 function mapStateToProps(state){
     return {
         cash: state.cash,
-        sessionID: state.sessionID
+        sessionID: state.sessionID,
+        workButtonsDisabled: state.workButtonsDisabled
     }
 }
 
@@ -83,6 +84,9 @@ function mapDispatchToProps(dispatch){
     return {
         earn_cash: (earned, sessionID) => {
             dispatch(earn_cash(earned, sessionID));
+        },
+        work_buttons: (bool) => {
+            dispatch(workButtons(bool))
         }
     }
 }

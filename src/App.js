@@ -1,29 +1,12 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
-import AppProtected from './components/AppProtected';
-
-import { BrowserRouter, IndexRoute, Route, Switch,Redirect, withRouter } from 'react-router-dom'
 import {connect} from "react-redux";
 import Start from './components/Start'
 import LoginPage from './components/LoginPage'
+import {set_state} from "./actions";
 
 
 export const serverAddress = 'https://magic-cashbox-server.herokuapp.com';
-/*
-import { render } from 'react-dom'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import configureStore from '../store/configureStore'
-
-
-import { firebaseAuth } from '../config/constants'
-//
-
-import { connect } from 'react-redux';
-import createHistory from 'history/createBrowserHistory'
-import { setUserStatus } from '../actions/auth'
-*/
 
 
 class App extends React.Component {
@@ -31,6 +14,15 @@ class App extends React.Component {
         authed: false,
         loading: true,
         bool: true
+
+    }
+
+    componentWillMount(){
+
+        var loaded = JSON.parse(localStorage.getItem('state'));
+        if (loaded) {
+            this.props.set_state(loaded);
+        }
 
     }
 
@@ -69,6 +61,14 @@ function mapStateToProps(state){
     }
 }
 
+function mapDispatchToProps(dispatch){
+    return {
+        set_state: (state) => {
+            dispatch(set_state(state));
+        }
+    }
+}
 
 
-export default connect(mapStateToProps)(App)
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
