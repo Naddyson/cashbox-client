@@ -27,19 +27,18 @@ class History extends Component {
                             return (
                                 <div style={{
                                     width: '100%',
-                                    height: '50px',
-                                    border: '1px solid pink',
+                                    height: '80px',
+                                    border: '1px solid blue ',
                                     borderRadius: 10,
                                     marginBottom: 2,
                                     padding: '5px'
 
                                 }}>
                                     <div style={{float: 'left'}}>
-                                        <p>Дата: {item.date}</p>
-                                        <p>Время в работе: {this.toHHMMSS(item.time)}</p>
+                                        <p><b>Дата:</b>: {item.date}</p>
+                                        <p><b>Время в работе:</b> {this.toHHMMSS(item.time)}</p>
+                                        <p><b>Заработано:</b> {item.earned}</p>
                                     </div>
-
-                                    <div style={{float: 'right'}}>{ item.earned }</div>
                                 </div>
                             )
                         })

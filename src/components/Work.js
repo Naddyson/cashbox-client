@@ -38,33 +38,40 @@ class Work extends Component {
                 { state.dialog ? <AlertDialog open={state.dialog} func={state.func} text={state.text} close={this.closeDialog}/> : <div/> }
                 <Button onClick={() => {
                     this.clickHandle(100)
-                }} variant="raised" fullWidth={true} color="secondary" disabled={this.props.workButtonsDisabled}
+                }} variant="raised" fullWidth={true} color="primary" disabled={this.props.workButtonsDisabled}
                 style={{
-                    marginBottom: '25px'
+                    marginBottom: '10px'
                 }}>
                     <h1>₽100</h1>
                 </Button>
                     <Button onClick={() => {
                         this.clickHandle(200)
-                    }} variant="raised" color="secondary" fullWidth={true} disabled={this.props.workButtonsDisabled}
+                    }} variant="raised" color="primary" fullWidth={true} disabled={this.props.workButtonsDisabled}
                     style={{
-                        marginBottom: '25px'
+                        marginBottom: '10px'
                     }}>
                         <h1>₽200</h1>
                     </Button>
                     <Button onClick={() => {
                         this.clickHandle(300)
-                    }} variant="raised" color="secondary" fullWidth={true} disabled={this.props.workButtonsDisabled} style={{
-                        marginBottom: '25px'
+                    }} variant="raised" color="primary" fullWidth={true} disabled={this.props.workButtonsDisabled} style={{
+                        marginBottom: '10px'
                     }}>
                         <h1>₽300</h1>
                     </Button>
                     <Button onClick={() => {
                         this.clickHandle(400)
-                    }} variant="raised" color="secondary" fullWidth={true} disabled={this.props.workButtonsDisabled} style={{
-                        marginBottom: '25px'
+                    }} variant="raised" color="primary" fullWidth={true} disabled={this.props.workButtonsDisabled} style={{
+                        marginBottom: '10px'
                     }}>
                         <h1>₽400</h1>
+                    </Button>
+                    <Button onClick={() => {
+                        this.clickHandle(500)
+                    }} variant="raised" color="primary" fullWidth={true} disabled={this.props.workButtonsDisabled} style={{
+                        marginBottom: '10px'
+                    }}>
+                        <h1>₽500</h1>
                     </Button>
 
             </div>
