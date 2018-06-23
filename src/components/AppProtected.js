@@ -80,10 +80,10 @@ class AppProtected extends Component {
 
                 <AppBar style={styles.appBar}>
                     <Tabs value={menuValue} onChange={this.handleChange} style={styles.tabs}>
-                        <Tab style={styles.tab} label="Work" onClick={() => this.setState({ menuValue: 0})}/>
-                        <Tab style={styles.tab} label="History" onClick={() => this.setState({ menuValue: 1})}/>
-                        <Tab style={styles.tab} label="Winners" onClick={() => this.setState({ menuValue: 2})}/>
-                        <Tab style={styles.tab} label="Settings" onClick={() => this.setState({ menuValue: 3})}/>
+                        <Tab style={styles.tab} label="Работа" onClick={() => this.setState({ menuValue: 0})}/>
+                        <Tab style={styles.tab} label="История" onClick={() => this.setState({ menuValue: 1})}/>
+                        <Tab style={styles.tab} label="Победители" onClick={() => this.setState({ menuValue: 2})}/>
+                        <Tab style={styles.tab} label="Настройки" onClick={() => this.setState({ menuValue: 3})}/>
                     </Tabs>
                     <div className='stat_bar'>
                         <Timer />

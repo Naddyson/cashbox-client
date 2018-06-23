@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b45f1d04-0658-4053-9786-f6bef5c63760" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Work.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Work.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppProtected.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppProtected.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Results.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Start.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Start.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Work.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Work.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -127,12 +130,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529712538253</updated>
-      <workItem from="1529712539500" duration="890000" />
+      <workItem from="1529712539500" duration="1278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="890000" />
+    <option name="totallyTimeSpent" value="1278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="741" extended-state="6" />

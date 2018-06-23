@@ -10,12 +10,12 @@ class Settings extends Component {
     render() {
         return (
             <div>
-                <h1>Hi, {this.props.username}</h1>
-                <p>Finish work ( cannot be undone ):</p>
+                <h1>Как дела, {this.props.username}?</h1>
+                <p>Закончить работу</p>
                 <Button onClick={() => this.props.finishSession(this.props.sessionID)}>Finish</Button>
 
-                <h3>Found a bug? Contact me!</h3>
-                <h4>+38(093)557-89-05 - Telegram, WhatsApp</h4>
+                <h3>Нашел баг? Свяжись со мной!</h3>
+                <h4>Евгений: +38(093)557-89-05 - Telegram, WhatsApp</h4>
 
             </div>
         );

@@ -19,7 +19,7 @@ class Work extends Component {
                     <h1>₽100</h1>
                 </Button>
                     <Button onClick={() => {
-                        if (window.confirm('Earned ₽200. Are you sure?')) this.props.earn_cash(200, sessionID)
+                        if (window.confirm('₽200. Are you sure?')) this.props.earn_cash(200, sessionID)
                     }} variant="raised" color="secondary" className='earn_cash_button'>
                         <h1>₽200</h1>
                     </Button>

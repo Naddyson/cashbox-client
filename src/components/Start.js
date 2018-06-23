@@ -43,14 +43,16 @@ class Start extends Component {
                 return <AppProtected/>
             } else return (
                 <div className="Start">
-                    <h1>Welcome, {this.props.username}!</h1>
-                    <h2>This is the Magic StairWay $CashBox$</h2>
-                    <h3>Stairway spin - money in</h3>
+                    <h1>Здравствуй, {this.props.username}!</h1>
+                    <h2>Добро пожаловать в Julius & Company</h2>
+                    <h3>Лесенка крутится - бабки мутятся</h3>
+                    <h3>Это не шутки - айфоны и мишутки</h3>
+                    <h3>Непросто, но реально</h3>
 
                     <Button
                         onClick={this.handleStart }
                     >
-                        Start work!
+                        Начать работу!
                     </Button>
                 </div>
             )

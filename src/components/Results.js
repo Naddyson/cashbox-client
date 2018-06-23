@@ -18,12 +18,12 @@ class Results extends Component {
     render() {
         return (
             <div>
-                <h1>Congratulations, {this.props.username}!</h1>
-                <h2>Your results of today:</h2>
-                <h3>You earned: {this.props.cash}</h3>
-                <h3>You worked time: {this.toHHMMSS(this.props.seconds)}</h3>
-                <h3>Your salary (20%): {this.props.cash*0.2}</h3>
-                <h3>Your rating (!!!): ...</h3>
+                <h1>Поздравляю с концом рабочего дня, {this.props.username}!</h1>
+                <h2>Твои результаты:</h2>
+                <h3>Касса: {this.props.cash}</h3>
+                <h3>Время в работе: {this.toHHMMSS(this.props.seconds)}</h3>
+                <h3>Твоя зарплата (20%): {this.props.cash*0.2}</h3>
+                <h3>Твой рейтинг (в разработке): ...</h3>
                 <Button onClick={()=> this.props.logout()}>Yes!</Button>
             </div>
         );
