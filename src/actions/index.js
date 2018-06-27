@@ -77,7 +77,7 @@ export function createSession(workerID){
         axios.post(`${serverAddress}/session/`, {workerID})
             .then( (response) => {
                 console.log('response session');
-                var sessionID = response.data._id;
+                var sessionID = response.data;
                 return dispatch({
                     type: "SET_SESSION",
                     payload: sessionID

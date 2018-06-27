@@ -29,6 +29,9 @@ export default function indexReducer (state = initialState, action) {
         case "WORK_BUTTONS": {
             return {...state, workButtonsDisabled: action.bool}
         }
+        case "LOGIN_BUTTON": {
+            return {...state, loginButtonDisabled: action.bool}
+        }
         case "EARN_CASH": {
             let date = new Date().toLocaleDateString();
             return {...state, cash: state.cash + action.earned, workButtonsDisabled: false, history: [...state.history, {

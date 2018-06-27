@@ -7,7 +7,7 @@ import {set_state} from "./actions";
 import _ from 'lodash'
 
 
-export const serverAddress = 'https://magic-cashbox-server.herokuapp.com';
+export const serverAddress = 'http://localhost:3001';
 
 
 class App extends React.Component {

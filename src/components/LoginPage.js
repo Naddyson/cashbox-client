@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { Button, TextField } from 'material-ui';
+
 import "./LoginPage.css";
 import {login} from "../actions";
 import {connect} from "react-redux";
@@ -10,7 +11,8 @@ class LoginPage extends Component {
 
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            disabled: false
         };
     }
 
@@ -33,6 +35,7 @@ class LoginPage extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        this.setState({ disabled: true });
         this.props.login(this.state.username, this.state.password)
     }
 
@@ -68,7 +71,7 @@ class LoginPage extends Component {
                         </div>
                         <Button
                             variant="raised" color="primary"
-                            disabled={!this.validateForm()}
+                            disabled={!this.validateForm() || this.state.disabled}
                             type="submit"
                             style={{
                                 margin: 'auto',
@@ -78,14 +81,19 @@ class LoginPage extends Component {
                         >
                             Login
                         </Button>
+
+
                     </div>
                 </form>
+                <p style={{ color: 'red' }}>{ this.state.disabled ? 'Авторизация...' : '' }</p><br/>
                 <p>You don't have an account? Or have any problems? Contact me! +380935578905 - Telegram, WhatsApp</p>
 
             </div>
         );
     }
 }
+
+
 
 function mapDispatchToProps(dispatch){
     return {
