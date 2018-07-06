@@ -4,7 +4,8 @@ import "./LoginPage.css";
 import {createSession} from "../actions";
 import {connect} from "react-redux";
 import AppProtected from './AppProtected';
-import Results from './Results'
+import Results from './Results';
+
 
 import axios from 'axios'
 import { serverAddress } from '../App';

@@ -8,6 +8,7 @@ import _ from 'lodash'
 
 
 export const serverAddress = 'http://magic-cashbox-server.herokuapp.com';
+//export const serverAddress = 'http://localhost:3001';
 
 
 class App extends React.Component {

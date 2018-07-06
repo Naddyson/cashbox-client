@@ -18,24 +18,16 @@ class Work extends Component {
         }
     }
     clickHandle = (earned) => {
-        this.setState({
-            func: () => { this.props.earn_cash(earned, this.props.sessionID) },
-            text: `₽${earned} Are you sure?`
-        });
-        this.setState({ dialog: true });
+        this.props.earn_cash(earned, this.props.sessionID);
         this.props.work_buttons(true);
     };
-    closeDialog = () => {
-        this.setState({ dialog: false });
-        this.props.work_buttons(false);
-    }
 
     render() {
         var state = this.state;
         return (
             <div className='container'>
                 <h2 style={{ textAlign: 'center'}}>Да пребудет с тобой сила!</h2>
-                { state.dialog ? <AlertDialog open={state.dialog} func={state.func} text={state.text} close={this.closeDialog}/> : <div/> }
+                {/*{ state.dialog ? <AlertDialog open={state.dialog} func={state.func} text={state.text} close={this.closeDialog}/> : <div/> }*/}
                 <Button onClick={() => {
                     this.clickHandle(100)
                 }} variant="raised" fullWidth={true} color="primary" disabled={this.props.workButtonsDisabled}
